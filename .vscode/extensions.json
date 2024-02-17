@@ -1,0 +1,14 @@
+{
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+  "recommendations": [
+    "angular.ng-template",
+    "vivaxy.vscode-conventional-commits",
+    "dbaeumer.vscode-eslint",
+    "heybourn.headwind",
+    "moalamri.inline-fold",
+    "PKief.material-icon-theme",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "oderwat.indent-rainbow"
+  ]
+}
