@@ -8,9 +8,9 @@ Su propósito es resolver consultas de juego en segundos (tipos, evoluciones, st
 
 ## Estado actual
 
-Proyecto en **Fase 1: Definición de producto y alcance**.
+Proyecto en **Fase actual: Definición de producto y alcance**.
 
-> Regla activa: no se avanza a fases posteriores hasta cerrar y aprobar Fase 1.
+> Regla activa: no se avanza a fases posteriores hasta cerrar y aprobar fase actual.
 
 ---
 
@@ -24,7 +24,7 @@ La información útil para jugar está fragmentada y hace perder tiempo. `zuru-p
 
 ---
 
-## Alcance del MVP (cerrado en Fase 1)
+## Alcance del MVP (cerrado en fase actual)
 
 1. Búsqueda rápida por nombre/ID.
 2. Ficha de Pokémon (tipo, stats base, habilidades).
@@ -43,9 +43,9 @@ La información útil para jugar está fragmentada y hace perder tiempo. `zuru-p
 
 ---
 
-## Criterios de éxito de Fase 1
+## Criterios de éxito de la fase actual
 
-Fase 1 se cierra cuando:
+La fase actual se cierra cuando:
 
 1. Visión del producto clara y no ambigua.
 2. MVP delimitado (qué entra / qué no entra).
@@ -53,7 +53,7 @@ Fase 1 se cierra cuando:
 4. Criterios medibles de aceptación definidos.
 5. Aprobación explícita de Richard para iniciar código.
 
-## Criterios de aceptación del MVP (definidos en Fase 1)
+## Criterios de aceptación del MVP (definidos en fase actual)
 
 1. **Búsqueda rápida**: localizar un Pokémon por nombre/ID en máximo 3 pasos.
 2. **Ficha de Pokémon**: mostrar tipo, stats base y habilidades en una sola vista.
@@ -74,9 +74,9 @@ Fase 1 se cierra cuando:
 
 ---
 
-## Modo de desarrollo autónomo (después de aprobación de Fase 1)
+## Modo de desarrollo autónomo (después de aprobación de la fase actual)
 
-Una vez aprobada Fase 1, el equipo opera en ciclos autónomos:
+Una vez aprobada fase actual, el equipo opera en ciclos autónomos:
 
 - **Plan corto → implementación → pruebas → reporte**.
 - Sin bloqueos por micro-decisiones.
@@ -104,5 +104,5 @@ Requisitos de uso:
 
 ## Estructura actual del repositorio
 
-- `README.md` — definición funcional y operativa de Fase 1.
+- `README.md` — definición funcional y operativa de la fase actual.
 - `PLAN.md` — plan de ejecución y condiciones de cierre.

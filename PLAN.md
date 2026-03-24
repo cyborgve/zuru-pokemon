@@ -2,15 +2,15 @@
 
 ## Propósito de este plan
 
-Definir y cerrar **Fase 1** con precisión suficiente para iniciar desarrollo autónomo con mínima intervención humana.
+Definir y cerrar **fase actual** con precisión suficiente para iniciar desarrollo autónomo con mínima intervención humana.
 
 ---
 
-## Fase activa: Fase 1 (única en ejecución)
+## Fase activa: fase actual (única en ejecución)
 
 No se diseña ni ejecuta Fase 2+ hasta completar y aprobar esta fase.
 
-## Objetivo de Fase 1
+## Objetivo de la fase actual
 
 Dejar cerrado:
 1. Qué problema resuelve el producto.
@@ -20,7 +20,7 @@ Dejar cerrado:
 
 ---
 
-## Entregables obligatorios de Fase 1
+## Entregables obligatorios de la fase actual
 
 1. `README.md` validado con visión, alcance y límites.
 2. Lista MVP priorizada (máximo 6 funcionalidades núcleo).
@@ -50,7 +50,7 @@ Dejar cerrado:
 
 ---
 
-## Definition of Done (DoD) de Fase 1
+## Definition of Done (DoD) de la fase actual
 
 La fase se considera terminada cuando todo esto esté en ✅:
 
@@ -63,7 +63,7 @@ La fase se considera terminada cuando todo esto esté en ✅:
 
 ---
 
-## Métricas de éxito de Fase 1
+## Métricas de éxito de la fase actual
 
 1. El producto puede explicarse en 1 párrafo claro.
 2. El alcance MVP cabe en 6 funcionalidades núcleo.
@@ -84,7 +84,7 @@ La fase se considera terminada cuando todo esto esté en ✅:
 
 ## Modo operativo autónomo (activación post-aprobación)
 
-Al aprobar Fase 1, se activa este ciclo:
+Al aprobar fase actual, se activa este ciclo:
 
 1. Plan corto (objetivo y criterios de aceptación).
 2. Implementación incremental.
@@ -114,7 +114,7 @@ Al aprobar Fase 1, se activa este ciclo:
 
 ### Entregables de cada sesión de 15 minutos
 1. 3-5 mejoras concretas a lo actual.
-2. 1-3 ideas nuevas (solo si aportan valor real y no rompen Fase 1).
+2. 1-3 ideas nuevas (solo si aportan valor real y no rompen fase actual).
 3. Priorización: alta / media / baja.
 4. Recomendación final para actualizar `README.md` y `PLAN.md`.
 
@@ -123,7 +123,7 @@ No se cierra sesión sin propuestas accionables. Se espera investigación "decen
 
 ---
 
-## Timeline de Fase 1
+## Timeline de la fase actual
 
 - Duración objetivo: **1-2 días**.
 - Incluye al menos una sesión formal de análisis de **15 minutos**.
