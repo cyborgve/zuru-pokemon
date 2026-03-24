@@ -1,19 +1,36 @@
 # PLAN - zuru-pokemon
 
-## Objetivo
+## Resumen ejecutivo
 
-Cerrar la definición de producto y alcance para iniciar desarrollo autónomo con mínima intervención humana.
+### Fase 1 — Base técnica
+- Inicializar Angular 21.
+- Definir estructura del proyecto.
+- Implementar capa de servicios para PokéAPI.
 
-## Entregables
+### Fase 2 — MVP núcleo
+- Búsqueda por nombre/ID.
+- Ficha de Pokémon.
+- Matchups.
+- Evoluciones.
+- Comparador 1v1.
+- Favoritos locales.
 
-1. README con visión, alcance y límites.
-2. MVP priorizado (máximo 6 funcionalidades).
-3. No-MVP explícito.
-4. Criterios de aceptación y cierre.
-5. Reglas de ejecución autónoma.
+### Fase 3 — Cierre
+- Pruebas mínimas.
+- Ajustes de rendimiento.
+- Publicación en GitHub Pages.
 
-## MVP
+---
 
+## Plan detallado
+
+## 1) Objetivo
+
+Construir una herramienta táctica para consulta rápida de información Pokémon durante gameplay, con enfoque en utilidad real y ejecución autónoma.
+
+## 2) Alcance funcional
+
+### MVP
 1. Búsqueda por nombre/ID.
 2. Ficha de Pokémon (tipo, stats, habilidades).
 3. Matchups (debilidades, resistencias, inmunidades).
@@ -21,25 +38,75 @@ Cerrar la definición de producto y alcance para iniciar desarrollo autónomo co
 5. Comparador 1v1.
 6. Favoritos locales.
 
-## No-MVP
-
+### No-MVP
 - Login/cuentas.
 - Funciones sociales.
 - Simulador de combate completo.
 - Integraciones no esenciales.
 
-## DoD
+## 3) Fase 1 — Base técnica (detallada)
 
-Se considera terminado cuando:
+### Tareas
+1. Crear proyecto Angular 21 y configuración base.
+2. Definir arquitectura de carpetas por dominio.
+3. Crear capa de servicios de consumo PokéAPI.
+4. Implementar manejo de errores base.
+5. Implementar cache local inicial.
 
-- [ ] Visión y problema claros.
-- [ ] MVP definido y acotado.
-- [ ] No-MVP documentado.
-- [ ] Criterios de aceptación medibles.
-- [ ] Reglas de autonomía documentadas.
-- [ ] Aprobación final de Richard para iniciar código.
+### Entregables
+- Proyecto Angular inicial funcional.
+- Servicio central de datos PokéAPI.
+- Convenciones y estructura documentadas.
 
-## Criterios de aceptación del MVP
+### Criterios de salida
+- App corre local.
+- Servicio de datos responde correctamente.
+- Errores de red controlados sin romper UI.
+
+## 4) Fase 2 — MVP núcleo (detallada)
+
+### Tareas
+1. Implementar buscador.
+2. Implementar ficha de Pokémon.
+3. Implementar vista de matchups.
+4. Implementar módulo de evoluciones.
+5. Implementar comparador 1v1.
+6. Implementar favoritos locales.
+
+### Entregables
+- MVP completo navegable.
+- Flujos principales funcionales en móvil y escritorio.
+
+### Criterios de salida
+- Cada módulo MVP cumple su criterio de aceptación.
+- Navegación clara y estable.
+
+## 5) Fase 3 — Cierre (detallada)
+
+### Tareas
+1. Pruebas funcionales mínimas.
+2. Ajustes de rendimiento y carga.
+3. Revisión final de errores críticos.
+4. Publicación en GitHub Pages.
+
+### Entregables
+- Versión funcional publicada.
+- Lista corta de pendientes post-lanzamiento (si aplica).
+
+### Criterios de salida
+- Flujo MVP estable.
+- Publicación activa en GitHub Pages.
+
+## 6) DoD global
+
+Se considera completo cuando:
+- [ ] MVP implementado según alcance.
+- [ ] No-MVP respetado.
+- [ ] Errores críticos resueltos.
+- [ ] Publicación en GitHub Pages realizada.
+- [ ] Aprobación final de Richard.
+
+## 7) Criterios de aceptación del MVP
 
 1. Búsqueda en máximo 3 pasos.
 2. Ficha completa en una vista.
@@ -48,13 +115,20 @@ Se considera terminado cuando:
 5. Comparador funcional entre 2 Pokémon.
 6. Favoritos locales persistentes.
 
-## Métricas de validación
+## 8) Operación autónoma
 
-1. El producto se explica en 1 párrafo claro.
-2. Toda idea nueva se clasifica como MVP o No-MVP sin ambigüedad.
-3. Se mantiene el foco en utilidad real para gameplay.
+Ciclo de trabajo:
+1. plan corto,
+2. implementación incremental,
+3. pruebas mínimas,
+4. reporte de avance.
 
-## Reunión de análisis (15 min)
+Escalar solo en:
+- cambio de alcance,
+- decisión de producto,
+- bloqueo crítico o riesgo alto.
+
+## 9) Reunión de análisis (15 min)
 
 Duración total: 15 minutos.
 
@@ -71,23 +145,10 @@ Distribución del tiempo definida por Vegeta para:
 
 ### Salida obligatoria
 1. 3-5 mejoras concretas.
-2. 1-3 ideas nuevas (solo si aportan valor real).
+2. 1-3 ideas nuevas (si aportan valor real).
 3. Priorización alta/media/baja.
 4. Recomendación final para README y PLAN.
 
-## Operación autónoma (tras aprobación)
-
-Ciclo:
-1. plan corto,
-2. implementación incremental,
-3. pruebas mínimas,
-4. reporte de avance.
-
-Escalar solo en:
-- cambio de alcance,
-- decisión de producto,
-- bloqueo crítico o riesgo alto.
-
-## Publicación
+## 10) Publicación
 
 GitHub Pages.
