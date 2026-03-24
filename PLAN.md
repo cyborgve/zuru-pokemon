@@ -91,7 +91,8 @@ Al aprobar Fase 1, se activa este ciclo:
 ## Dinámica obligatoria de análisis de equipo (nueva tarea)
 
 ### Reunión de análisis (timeboxed)
-- Duración fija: **15 minutos** por sesión.
+- Duración total de la tarea: **15 minutos**.
+- **Vegeta decide la distribución interna del tiempo** para completar la tarea (investigación, síntesis, priorización y cierre).
 - Objetivo: detectar mejoras concretas al estado actual (`README.md` + `PLAN.md`) y proponer ideas nuevas de alto valor.
 - Salida obligatoria: lista priorizada de mejoras con impacto esperado.
 
