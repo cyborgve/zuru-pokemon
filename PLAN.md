@@ -1,64 +1,100 @@
 # PLAN - zuru-pokemon
 
-## Fase actual: Fase 1 (única activa)
+## Propósito de este plan
 
-Este plan se enfoca **únicamente** en la Fase 1.
-No se ejecutan ni se planifican fases posteriores hasta cerrar esta fase formalmente.
-
-## Fase 1: Definición de producto y alcance
-
-### Objetivo
-Definir con precisión:
-1. Qué problema resuelve `zuru-pokemon`.
-2. Para quién está diseñada.
-3. Qué funcionalidades mínimas incluye el MVP.
-4. Qué queda explícitamente fuera del MVP.
-
-### Entregables obligatorios
-1. `README.md` actualizado con visión, alcance MVP y límites.
-2. Lista de funcionalidades MVP cerrada y priorizada.
-3. Lista No-MVP (fuera de alcance) validada.
-4. Criterios de éxito medibles para cierre de fase.
-
-### Lista MVP (cerrada en Fase 1)
-1. Búsqueda rápida por nombre/ID.
-2. Ficha de Pokémon (tipo, stats base, habilidades).
-3. Matchups de tipos (debilidades/resistencias/inmunidades).
-4. Evoluciones y condiciones.
-5. Comparador básico entre 2 Pokémon.
-6. Favoritos locales.
-
-### Lista No-MVP (cerrada en Fase 1)
-- Autenticación/cuentas.
-- Funciones sociales.
-- Simulador de combate completo.
-- Integraciones extra no críticas.
-- Cualquier módulo fuera de la lista MVP.
-
-### Criterios de salida (DoD) de Fase 1
-La fase termina cuando se cumpla todo:
-
-- [ ] Visión del producto clara y no ambigua.
-- [ ] MVP delimitado (qué entra / qué no entra).
-- [ ] No-MVP documentado.
-- [ ] Criterios de éxito definidos y medibles.
-- [ ] Aprobación explícita de Richard para cierre de fase.
-
-### Métricas de éxito de Fase 1
-1. Se puede explicar el producto en 1 párrafo sin contradicciones.
-2. El alcance MVP cabe en una lista de máximo 6 funcionalidades núcleo.
-3. Cualquier nueva idea se puede clasificar como MVP o No-MVP sin ambigüedad.
-4. El enfoque de utilidad para gameplay queda explícito en README.
-
-### Duración estimada
-1-2 días (o hasta aprobación explícita del cierre por parte de Richard).
+Definir y cerrar **Fase 1** con precisión suficiente para iniciar desarrollo autónomo con mínima intervención humana.
 
 ---
 
-## Reglas operativas durante Fase 1
+## Fase activa: Fase 1 (única en ejecución)
 
-1. No adelantar decisiones técnicas de fases futuras.
-2. No ampliar alcance sin autorización explícita.
-3. Mantener foco en producto útil para gameplay.
-4. Documentar cambios solo en `README.md` y `PLAN.md`.
-5. Toda propuesta debe responder: ¿ayuda a decidir mejor durante una partida?
+No se diseña ni ejecuta Fase 2+ hasta completar y aprobar esta fase.
+
+## Objetivo de Fase 1
+
+Dejar cerrado:
+1. Qué problema resuelve el producto.
+2. Para quién se construye.
+3. Qué entra al MVP y qué queda fuera.
+4. Cómo se valida que está listo para comenzar código.
+
+---
+
+## Entregables obligatorios de Fase 1
+
+1. `README.md` validado con visión, alcance y límites.
+2. Lista MVP priorizada (máximo 6 funcionalidades núcleo).
+3. Lista No-MVP explícita.
+4. Criterios de cierre medibles (DoD).
+5. Acuerdo de modo autónomo post-aprobación.
+
+---
+
+## Lista MVP (cerrada)
+
+1. Búsqueda rápida por nombre/ID.
+2. Ficha de Pokémon (tipo, stats, habilidades).
+3. Matchups de tipos (debilidades/resistencias/inmunidades).
+4. Evoluciones y condiciones.
+5. Comparador básico 1v1.
+6. Favoritos locales.
+
+## Lista No-MVP (cerrada)
+
+- Login/cuentas.
+- Funciones sociales.
+- Simulador de combate completo.
+- Integraciones no esenciales.
+- Funcionalidad fuera del MVP definido.
+
+---
+
+## Definition of Done (DoD) de Fase 1
+
+La fase se considera terminada cuando todo esto esté en ✅:
+
+- [ ] Visión y problema descritos sin contradicciones.
+- [ ] MVP definido y acotado.
+- [ ] No-MVP explícito y comprendido.
+- [ ] Criterios de éxito medibles definidos.
+- [ ] Reglas de autonomía documentadas.
+- [ ] Aprobación final de Richard para iniciar código.
+
+---
+
+## Métricas de éxito de Fase 1
+
+1. El producto puede explicarse en 1 párrafo claro.
+2. El alcance MVP cabe en 6 funcionalidades núcleo.
+3. Cualquier idea nueva se clasifica inmediatamente como MVP o No-MVP.
+4. El foco en utilidad real para gameplay queda explícito.
+
+---
+
+## Modo operativo autónomo (activación post-aprobación)
+
+Al aprobar Fase 1, se activa este ciclo:
+
+1. Plan corto (objetivo y criterios de aceptación).
+2. Implementación incremental.
+3. Pruebas funcionales mínimas.
+4. Reporte de avance y siguiente bloque.
+
+### Escalación obligatoria (requiere intervención humana)
+
+- Cambio de alcance de MVP.
+- Decisiones de producto que alteren visión.
+- Riesgo técnico alto o bloqueo crítico.
+
+---
+
+## Timeline de Fase 1
+
+- Duración objetivo: **1-2 días**.
+- Cierre real: cuando Richard valide DoD y autorice inicio de código.
+
+---
+
+## Próximo hito (solo después de aprobación)
+
+**Inicio de código del MVP** con ejecución autónoma por ciclos, manteniendo alcance estricto definido en Fase 1.
