@@ -53,6 +53,15 @@ Fase 1 se cierra cuando:
 4. Criterios medibles de aceptación definidos.
 5. Aprobación explícita de Richard para iniciar código.
 
+## Criterios de aceptación del MVP (definidos en Fase 1)
+
+1. **Búsqueda rápida**: localizar un Pokémon por nombre/ID en máximo 3 pasos.
+2. **Ficha de Pokémon**: mostrar tipo, stats base y habilidades en una sola vista.
+3. **Matchups**: mostrar debilidades, resistencias e inmunidades de forma legible.
+4. **Evoluciones**: mostrar cadena evolutiva y condición de evolución conocida.
+5. **Comparador 1v1**: comparar dos Pokémon en una sola pantalla.
+6. **Favoritos**: guardar y listar favoritos localmente sin backend propio.
+
 ---
 
 ## Principios de producto

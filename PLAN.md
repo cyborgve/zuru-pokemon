@@ -26,7 +26,8 @@ Dejar cerrado:
 2. Lista MVP priorizada (máximo 6 funcionalidades núcleo).
 3. Lista No-MVP explícita.
 4. Criterios de cierre medibles (DoD).
-5. Acuerdo de modo autónomo post-aprobación.
+5. Criterios de aceptación funcional del MVP definidos.
+6. Acuerdo de modo autónomo post-aprobación.
 
 ---
 
@@ -68,6 +69,16 @@ La fase se considera terminada cuando todo esto esté en ✅:
 2. El alcance MVP cabe en 6 funcionalidades núcleo.
 3. Cualquier idea nueva se clasifica inmediatamente como MVP o No-MVP.
 4. El foco en utilidad real para gameplay queda explícito.
+5. Cada funcionalidad MVP tiene criterio de aceptación verificable.
+
+## Criterios de aceptación funcional del MVP
+
+1. **Búsqueda rápida**: encontrar un Pokémon por nombre/ID en máximo 3 pasos.
+2. **Ficha de Pokémon**: tipo, stats base y habilidades visibles en una sola vista.
+3. **Matchups de tipos**: debilidades, resistencias e inmunidades mostradas claramente.
+4. **Evoluciones**: cadena evolutiva y condición de evolución mostradas cuando existan.
+5. **Comparador 1v1**: comparación funcional entre dos Pokémon en la misma pantalla.
+6. **Favoritos locales**: guardar y listar favoritos sin backend propio.
 
 ---
 
