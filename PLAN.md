@@ -2,12 +2,12 @@
 
 ## Objetivo
 
-Cerrar definición de producto y alcance para iniciar desarrollo autónomo con mínima intervención humana.
+Cerrar la definición de producto y alcance para iniciar desarrollo autónomo con mínima intervención humana.
 
 ## Entregables
 
 1. README con visión, alcance y límites.
-2. MVP priorizado (máximo 6 funcionalidades núcleo).
+2. MVP priorizado (máximo 6 funcionalidades).
 3. No-MVP explícito.
 4. Criterios de aceptación y cierre.
 5. Reglas de ejecución autónoma.
@@ -50,15 +50,15 @@ Se considera terminado cuando:
 
 ## Métricas de validación
 
-1. El producto se explica en 1 párrafo.
+1. El producto se explica en 1 párrafo claro.
 2. Toda idea nueva se clasifica como MVP o No-MVP sin ambigüedad.
-3. El foco de utilidad para gameplay se mantiene.
+3. Se mantiene el foco en utilidad real para gameplay.
 
 ## Reunión de análisis (15 min)
 
 Duración total: 15 minutos.
 
-Distribución de tiempo definida por Vegeta para:
+Distribución del tiempo definida por Vegeta para:
 - investigación,
 - síntesis,
 - priorización,
@@ -71,7 +71,7 @@ Distribución de tiempo definida por Vegeta para:
 
 ### Salida obligatoria
 1. 3-5 mejoras concretas.
-2. 1-3 ideas nuevas (si aportan valor real).
+2. 1-3 ideas nuevas (solo si aportan valor real).
 3. Priorización alta/media/baja.
 4. Recomendación final para README y PLAN.
 
@@ -86,4 +86,8 @@ Ciclo:
 Escalar solo en:
 - cambio de alcance,
 - decisión de producto,
-- bloqueo crítico/riesgo alto.
+- bloqueo crítico o riesgo alto.
+
+## Publicación
+
+GitHub Pages.
