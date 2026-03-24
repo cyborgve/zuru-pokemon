@@ -88,13 +88,37 @@ Al aprobar Fase 1, se activa este ciclo:
 
 ---
 
+## Dinámica obligatoria de análisis de equipo (nueva tarea)
+
+### Reunión de análisis (timeboxed)
+- Duración fija: **15 minutos** por sesión.
+- Objetivo: detectar mejoras concretas al estado actual (`README.md` + `PLAN.md`) y proponer ideas nuevas de alto valor.
+- Salida obligatoria: lista priorizada de mejoras con impacto esperado.
+
+### Responsables y foco
+- **Ray**: investigación funcional y de producto (utilidad real para gameplay, claridad de MVP, vacíos de alcance).
+- **Lucy**: investigación técnica y operativa (riesgos, consistencia del plan, mejoras de ejecución autónoma).
+- **Vegeta (coordinación)**: consolidar hallazgos, resolver conflictos y proponer versión final integrada.
+
+### Entregables de cada sesión de 15 minutos
+1. 3-5 mejoras concretas a lo actual.
+2. 1-3 ideas nuevas (solo si aportan valor real y no rompen Fase 1).
+3. Priorización: alta / media / baja.
+4. Recomendación final para actualizar `README.md` y `PLAN.md`.
+
+### Regla de calidad
+No se cierra sesión sin propuestas accionables. Se espera investigación "decente" con argumentos claros, no opiniones vagas.
+
+---
+
 ## Timeline de Fase 1
 
 - Duración objetivo: **1-2 días**.
+- Incluye al menos una sesión formal de análisis de **15 minutos**.
 - Cierre real: cuando Richard valide DoD y autorice inicio de código.
 
 ---
 
 ## Próximo hito (solo después de aprobación)
 
-**Inicio de código del MVP** con ejecución autónoma por ciclos, manteniendo alcance estricto definido en Fase 1.
+**Ajuste final de `README.md` y `PLAN.md`** con las mejores ideas consolidadas del equipo (Ray + Lucy + coordinación Vegeta), seguido de aprobación de Richard para iniciar código MVP.
