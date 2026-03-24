@@ -2,59 +2,61 @@
 
 `zuru-pokemon` es una **herramienta de información útil para jugar cualquier juego de Pokémon**.
 
-No busca ser solo una Pokédex visual: su objetivo es dar respuestas rápidas y accionables para tomar mejores decisiones mientras juegas.
+No busca ser solo una Pokédex visual: su objetivo es dar respuestas rápidas y accionables para tomar mejores decisiones mientras se juega.
 
-## Objetivo del producto
+## Estado actual del proyecto
 
-Construir una base sólida y escalable para consulta táctica Pokémon, con enfoque en:
-- rapidez de respuesta,
-- claridad de información,
-- utilidad real en gameplay,
-- evolución incremental por fases.
+Proyecto en **Fase 1: Definición de producto y alcance**.
+
+> Regla operativa actual: no se avanza a fases posteriores hasta cerrar completamente esta fase.
+
+## Visión (Fase 1)
+
+Centralizar la información táctica más importante de Pokémon en una sola herramienta, rápida y clara, para que cualquier jugador pueda decidir mejor durante una partida.
 
 ## Problema que resuelve
 
-Cuando un jugador necesita decidir rápido (qué tipo usar, cómo evoluciona un Pokémon, qué movimiento conviene, cómo cubrir debilidades del equipo), la información suele estar dispersa.
+La información útil para jugar (tipos, evoluciones, stats y comparaciones) está dispersa y suele hacer perder tiempo al jugador.
 
-`zuru-pokemon` centraliza y simplifica esa información en un formato práctico.
+`zuru-pokemon` la concentra en consultas simples y accionables.
 
-## Principios de diseño
+## Alcance del MVP definido en Fase 1
 
-1. **Velocidad primero**: respuesta en 2-3 pasos.
-2. **Información accionable**: menos relleno, más decisión.
-3. **Mobile-first**: pensada para usar mientras se juega.
-4. **Escalable**: arquitectura preparada para crecer por módulos.
-5. **Fuente confiable**: PokéAPI como backend de datos inicial.
+El MVP se limita a estas funcionalidades:
 
-## Fuente de datos (backend)
+1. Búsqueda rápida por nombre/ID.
+2. Ficha de Pokémon (tipo, stats base, habilidades).
+3. Matchups de tipos (debilidades/resistencias/inmunidades).
+4. Evoluciones y condiciones.
+5. Comparador básico entre 2 Pokémon.
+6. Favoritos locales para acceso rápido.
 
-Se usará **PokéAPI** como backend de datos en la primera etapa para reducir tiempo de implementación.
+## Fuera de alcance por ahora (No-MVP)
 
-- API pública de solo lectura (GET)
-- amplia cobertura de entidades Pokémon
-- ideal para MVP rápido
+Hasta cerrar Fase 1, quedan fuera:
+- Sistema de cuentas/usuarios.
+- Funciones sociales o multijugador.
+- Simulador de combate completo.
+- Integraciones avanzadas externas adicionales.
+- Cualquier módulo no incluido en la lista de MVP.
 
-### Consideraciones técnicas
-- usar cache local para reducir latencia y consumo de requests,
-- diseñar capa de servicios para desacoplar lógica de UI,
-- incluir manejo de errores/fallback cuando la API externa no responda.
+## Criterios de éxito de Fase 1
 
-## Alcance del MVP
+La Fase 1 se considera cerrada cuando:
 
-El MVP debe cubrir consultas esenciales para juego real:
+1. La visión del producto queda clara y sin ambigüedades.
+2. El alcance del MVP queda acordado (qué entra y qué no entra).
+3. Existen criterios de aceptación medibles para el MVP.
+4. El enfoque de utilidad para gameplay queda explícito y validado.
 
-1. Búsqueda rápida por nombre/ID
-2. Ficha de Pokémon (tipo, stats base, habilidades)
-3. Matchups de tipos (debilidades/resistencias/inmunidades)
-4. Evoluciones y condiciones
-5. Comparador básico entre 2 Pokémon
-6. Favoritos locales para acceso rápido
+## Principios de decisión (Fase 1)
+
+1. **Velocidad de consulta primero** (2-3 pasos).
+2. **Información accionable** sobre estética.
+3. **Simplicidad funcional** sobre complejidad prematura.
+4. **No adelantarse de fase** sin aprobación explícita.
 
 ## Estructura actual del repositorio
 
-- `README.md` — definición de producto y lineamientos.
-- `PLAN.md` — plan de ejecución por fases con entregables.
-
-## Resultado esperado de Fase 1
-
-Dejar una definición cerrada del producto y del MVP, con criterios de éxito medibles y sin ambigüedades para ejecución autónoma.
+- `README.md` — definición de producto y límites de Fase 1.
+- `PLAN.md` — plan operativo de Fase 1 y su cierre.

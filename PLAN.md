@@ -1,110 +1,64 @@
 # PLAN - zuru-pokemon
 
-## Visión
+## Fase actual: Fase 1 (única activa)
 
-Construir una herramienta confiable y rápida para consultar información relevante de Pokémon durante gameplay, útil para cualquier jugador y cualquier entrega de la saga.
+Este plan se enfoca **únicamente** en la Fase 1.
+No se ejecutan ni se planifican fases posteriores hasta cerrar esta fase formalmente.
 
 ## Fase 1: Definición de producto y alcance
 
 ### Objetivo
-Definir con precisión qué problema se resuelve, para quién y con qué alcance inicial.
+Definir con precisión:
+1. Qué problema resuelve `zuru-pokemon`.
+2. Para quién está diseñada.
+3. Qué funcionalidades mínimas incluye el MVP.
+4. Qué queda explícitamente fuera del MVP.
 
-### Entregables
-- Definición formal del producto en `README.md`.
-- Alcance de MVP validado.
-- Lista de casos de uso prioritarios.
+### Entregables obligatorios
+1. `README.md` actualizado con visión, alcance MVP y límites.
+2. Lista de funcionalidades MVP cerrada y priorizada.
+3. Lista No-MVP (fuera de alcance) validada.
+4. Criterios de éxito medibles para cierre de fase.
 
-### Criterios de salida (DoD)
-- Visión clara y no ambigua.
-- MVP acotado y viable.
-- Criterios de éxito definidos.
+### Lista MVP (cerrada en Fase 1)
+1. Búsqueda rápida por nombre/ID.
+2. Ficha de Pokémon (tipo, stats base, habilidades).
+3. Matchups de tipos (debilidades/resistencias/inmunidades).
+4. Evoluciones y condiciones.
+5. Comparador básico entre 2 Pokémon.
+6. Favoritos locales.
 
-### Duración estimada
-1-2 días.
+### Lista No-MVP (cerrada en Fase 1)
+- Autenticación/cuentas.
+- Funciones sociales.
+- Simulador de combate completo.
+- Integraciones extra no críticas.
+- Cualquier módulo fuera de la lista MVP.
 
----
+### Criterios de salida (DoD) de Fase 1
+La fase termina cuando se cumpla todo:
 
-## Fase 2: Arquitectura y base técnica
+- [ ] Visión del producto clara y no ambigua.
+- [ ] MVP delimitado (qué entra / qué no entra).
+- [ ] No-MVP documentado.
+- [ ] Criterios de éxito definidos y medibles.
+- [ ] Aprobación explícita de Richard para cierre de fase.
 
-### Objetivo
-Definir arquitectura inicial basada en PokéAPI, con estructura de proyecto mantenible.
-
-### Entregables
-- Selección de stack frontend.
-- Capa de servicios para consumo de PokéAPI.
-- Estrategia de cache local.
-- Estructura de carpetas y convenciones.
-
-### Criterios de salida (DoD)
-- Proyecto base ejecutable.
-- Servicios de API abstraídos.
-- Manejo básico de errores y estados de carga.
-
-### Riesgos y mitigación
-- Riesgo: latencia o caída de API externa.
-- Mitigación: cache + fallback de UI.
-
-### Duración estimada
-2-4 días.
-
----
-
-## Fase 3: Implementación MVP (núcleo funcional)
-
-### Objetivo
-Construir funcionalidades clave para consulta útil en juego real.
-
-### Módulos MVP
-1. **Buscador rápido** por nombre/ID.
-2. **Ficha de Pokémon** (tipo, stats, habilidades).
-3. **Matchups de tipos** (debilidades/resistencias/inmunidades).
-4. **Evoluciones y condiciones**.
-5. **Comparador básico** 1v1.
-6. **Favoritos locales**.
-
-### Criterios de salida (DoD)
-- Flujo completo usable en móvil y escritorio.
-- Tiempo de respuesta aceptable para consulta rápida.
-- Datos coherentes y validados contra PokéAPI.
+### Métricas de éxito de Fase 1
+1. Se puede explicar el producto en 1 párrafo sin contradicciones.
+2. El alcance MVP cabe en una lista de máximo 6 funcionalidades núcleo.
+3. Cualquier nueva idea se puede clasificar como MVP o No-MVP sin ambigüedad.
+4. El enfoque de utilidad para gameplay queda explícito en README.
 
 ### Duración estimada
-5-8 días.
+1-2 días (o hasta aprobación explícita del cierre por parte de Richard).
 
 ---
 
-## Fase 4: Stabilización y mejoras tácticas
+## Reglas operativas durante Fase 1
 
-### Objetivo
-Aumentar confiabilidad y utilidad en escenarios reales de uso.
-
-### Entregables
-- Pruebas funcionales de módulos críticos.
-- Optimización de rendimiento percibido.
-- Documentación técnica y de uso.
-- Backlog priorizado para v2.
-
-### Criterios de salida (DoD)
-- Errores críticos corregidos.
-- Experiencia de consulta rápida y estable.
-- Roadmap de evolución definido.
-
-### Duración estimada
-2-4 días.
-
----
-
-## Métricas de éxito (MVP)
-
-1. Usuario encuentra info clave en menos de 3 pasos.
-2. Tiempo de consulta percibido menor a 2-3 segundos en casos comunes.
-3. Cobertura de casos de uso base (búsqueda, tipo, evolución, comparación).
-4. Tasa baja de errores en consumo de API.
-
----
-
-## Reglas de ejecución autónoma
-
-1. Priorizar valor funcional sobre complejidad técnica innecesaria.
-2. No ampliar alcance sin aprobación explícita.
-3. Documentar decisiones relevantes al finalizar cada fase.
-4. Mantener enfoque en herramienta útil para jugar, no en demo visual.
+1. No adelantar decisiones técnicas de fases futuras.
+2. No ampliar alcance sin autorización explícita.
+3. Mantener foco en producto útil para gameplay.
+4. Documentar cambios solo en `README.md` y `PLAN.md`.
+5. Toda propuesta debe responder: ¿ayuda a decidir mejor durante una partida?
