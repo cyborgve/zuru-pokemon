@@ -1,108 +1,85 @@
 # zuru-pokemon
 
-`zuru-pokemon` es una **herramienta táctica de información para jugar cualquier juego de Pokémon**.
+`zuru-pokemon` es una herramienta de información para jugar Pokémon.
 
-Su propósito es resolver consultas de juego en segundos (tipos, evoluciones, stats y comparación), sin ruido y con foco en decisiones rápidas.
+Su objetivo es responder rápido consultas de juego (tipos, evoluciones, stats y comparación) para ayudar a tomar decisiones durante la partida.
 
----
+## Estado
 
-## Estado actual
-
-Proyecto en **Fase actual: Definición de producto y alcance**.
-
-> Regla activa: no se avanza a fases posteriores hasta cerrar y aprobar fase actual.
-
----
+Proyecto en definición de producto y alcance.
 
 ## Visión
 
-Centralizar la información táctica más útil de Pokémon en una herramienta rápida, clara y confiable, para que cualquier jugador tome mejores decisiones durante una partida.
+Centralizar información táctica útil en una herramienta rápida, clara y confiable.
 
-## Problema que resuelve
+## Problema
 
-La información útil para jugar está fragmentada y hace perder tiempo. `zuru-pokemon` la concentra en consultas simples, accionables y de alta velocidad.
+La información para jugar está dispersa y hace perder tiempo. `zuru-pokemon` la reúne en consultas simples y accionables.
 
----
+## MVP
 
-## Alcance del MVP (cerrado en fase actual)
-
-1. Búsqueda rápida por nombre/ID.
+1. Búsqueda por nombre/ID.
 2. Ficha de Pokémon (tipo, stats base, habilidades).
-3. Matchups de tipos (debilidades/resistencias/inmunidades).
+3. Matchups de tipos (debilidades, resistencias, inmunidades).
 4. Evoluciones y condiciones.
-5. Comparador básico entre 2 Pokémon.
-6. Favoritos locales para acceso rápido.
+5. Comparador 1v1.
+6. Favoritos locales.
 
-## Fuera de alcance (No-MVP)
+## No-MVP
 
-- Cuentas y autenticación.
+- Cuentas/autenticación.
 - Funciones sociales/multijugador.
 - Simulador de combate completo.
 - Integraciones externas no críticas.
-- Cualquier módulo fuera de la lista MVP.
 
----
+## Cierre de esta etapa
 
-## Criterios de éxito de la fase actual
+Se cierra cuando:
 
-La fase actual se cierra cuando:
+1. La visión está clara y sin ambigüedades.
+2. El MVP y No-MVP están definidos.
+3. Hay criterios de aceptación medibles.
+4. Richard aprueba inicio de código.
 
-1. Visión del producto clara y no ambigua.
-2. MVP delimitado (qué entra / qué no entra).
-3. No-MVP documentado explícitamente.
-4. Criterios medibles de aceptación definidos.
-5. Aprobación explícita de Richard para iniciar código.
+## Criterios de aceptación del MVP
 
-## Criterios de aceptación del MVP (definidos en fase actual)
+1. Búsqueda en máximo 3 pasos.
+2. Ficha completa en una sola vista.
+3. Matchups claros y legibles.
+4. Evoluciones con condiciones visibles cuando existan.
+5. Comparador funcional entre 2 Pokémon.
+6. Guardado y listado de favoritos locales.
 
-1. **Búsqueda rápida**: localizar un Pokémon por nombre/ID en máximo 3 pasos.
-2. **Ficha de Pokémon**: mostrar tipo, stats base y habilidades en una sola vista.
-3. **Matchups**: mostrar debilidades, resistencias e inmunidades de forma legible.
-4. **Evoluciones**: mostrar cadena evolutiva y condición de evolución conocida.
-5. **Comparador 1v1**: comparar dos Pokémon en una sola pantalla.
-6. **Favoritos**: guardar y listar favoritos localmente sin backend propio.
+## Principios
 
----
+1. Velocidad primero.
+2. Información accionable.
+3. Simplicidad funcional.
+4. Mobile-first.
 
-## Principios de producto
+## Desarrollo autónomo (tras aprobación)
 
-1. **Velocidad primero** (respuesta en 2-3 pasos).
-2. **Información accionable** sobre estética.
-3. **Simplicidad funcional** sobre complejidad prematura.
-4. **Mobile-first** (uso en medio de partida).
-5. **No adelantar fases** sin aprobación.
+Ciclo de trabajo:
+- plan corto,
+- implementación,
+- pruebas mínimas,
+- reporte.
 
----
+Escalación obligatoria si hay:
+- cambio de alcance,
+- decisión de producto,
+- riesgo técnico alto o bloqueo crítico.
 
-## Modo de desarrollo autónomo (después de aprobación de la fase actual)
+## Datos
 
-Una vez aprobada fase actual, el equipo opera en ciclos autónomos:
+Fuente inicial: PokéAPI.
 
-- **Plan corto → implementación → pruebas → reporte**.
-- Sin bloqueos por micro-decisiones.
-- Escalación solo en cambios de alcance, riesgo alto o decisiones de producto.
+Reglas:
+- cache local,
+- manejo de errores/fallback,
+- capa de servicios para desacoplar UI y datos.
 
-### Reglas de autonomía
+## Archivos guía
 
-1. No alterar alcance MVP sin aprobación.
-2. Entregar incrementos pequeños y verificables.
-3. Documentar decisiones técnicas relevantes en cada ciclo.
-4. Mantener trazabilidad de cambios (commit + checklist de validación).
-
----
-
-## Fuente de datos inicial
-
-Se usará **PokéAPI** en la etapa inicial por velocidad de ejecución y cobertura funcional.
-
-Requisitos de uso:
-- Cache local para reducir latencia/costos de consultas.
-- Manejo de errores/fallback de API externa.
-- Capa de servicios para desacoplar UI de la fuente de datos.
-
----
-
-## Estructura actual del repositorio
-
-- `README.md` — definición funcional y operativa de la fase actual.
-- `PLAN.md` — plan de ejecución y condiciones de cierre.
+- `README.md`
+- `PLAN.md`
