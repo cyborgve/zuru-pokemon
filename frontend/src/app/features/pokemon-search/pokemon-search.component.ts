@@ -1,7 +1,7 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { forkJoin } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { PokeApiService } from '../../core/services/pokeapi.service';
 import { Pokemon } from '../../core/models/pokemon.model';
 
@@ -93,6 +93,7 @@ import { Pokemon } from '../../core/models/pokemon.model';
 })
 export class PokemonSearchComponent {
   private readonly api = inject(PokeApiService);
+  private readonly http = inject(HttpClient);
 
   query = '';
   compareQuery = '';
@@ -201,21 +202,32 @@ export class PokemonSearchComponent {
 
   private loadTypeDamage(p: Pokemon): void {
     const types = p.types.map(t => t.type.name);
-    const requests = types.map(type => fetch(`https://pokeapi.co/api/v2/type/${type}`).then(r => r.json()));
+    const requests = types.map(type => this.http.get<any>(`https://pokeapi.co/api/v2/type/${type}`));
 
-    Promise.all(requests)
-      .then(results => {
-        const map: Record<string, { double_damage_from: string[]; half_damage_from: string[]; no_damage_from: string[] }> = {};
-        for (const r of results) {
+    if (!requests.length) {
+      this.typeDamageMap.set({});
+      return;
+    }
+
+    let pending = requests.length;
+    const map: Record<string, { double_damage_from: string[]; half_damage_from: string[]; no_damage_from: string[] }> = {};
+
+    requests.forEach(req => {
+      req.subscribe({
+        next: (r) => {
           map[r.name] = {
             double_damage_from: r.damage_relations.double_damage_from.map((x: any) => x.name),
             half_damage_from: r.damage_relations.half_damage_from.map((x: any) => x.name),
             no_damage_from: r.damage_relations.no_damage_from.map((x: any) => x.name)
           };
+        },
+        error: () => {},
+        complete: () => {
+          pending -= 1;
+          if (pending === 0) this.typeDamageMap.set(map);
         }
-        this.typeDamageMap.set(map);
-      })
-      .catch(() => this.typeDamageMap.set({}));
+      });
+    });
   }
 
   private calcDamage(): { weak: string[]; resist: string[]; immune: string[] } {
