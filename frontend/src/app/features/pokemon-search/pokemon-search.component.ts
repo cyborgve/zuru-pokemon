@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, OnInit, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -10,17 +10,30 @@ import { Pokemon } from '../../core/models/pokemon.model';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <section class="search">
-      <h2>Buscador Pokémon</h2>
+    <section class="panel">
+      <header class="hero">
+        <h2>Zuru Pokédex Táctica</h2>
+        <p>Consulta rápida para gameplay en español.</p>
+      </header>
+
       <div class="row">
-        <input [(ngModel)]="query" placeholder="Nombre o ID" (keyup.enter)="search()" />
+        <input [(ngModel)]="query" placeholder="Nombre o ID (ej: pikachu o 25)" (keyup.enter)="search()" />
         <button (click)="search()">Buscar</button>
       </div>
 
-      <p *ngIf="loading()">Cargando...</p>
+      <p *ngIf="loading()" class="estado">Cargando datos...</p>
       <p *ngIf="error()" class="error">{{ error() }}</p>
 
-      <article *ngIf="pokemon() as p" class="card">
+      <section class="inicial" *ngIf="!pokemon() && initialList().length">
+        <h3>Explorar rápido</h3>
+        <div class="grid">
+          <button class="poke-chip" *ngFor="let item of initialList()" (click)="loadFavorite(item)">
+            {{ item }}
+          </button>
+        </div>
+      </section>
+
+      <article *ngIf="pokemon() as p" class="card" [style.border-color]="typeColor(primaryType(p))">
         <header class="head">
           <h3>#{{ p.id }} {{ p.name }}</h3>
           <button class="fav" (click)="toggleFavorite(p.name)">
@@ -36,7 +49,7 @@ import { Pokemon } from '../../core/models/pokemon.model';
 
         <h4>Stats base</h4>
         <ul>
-          <li *ngFor="let s of p.stats">{{ s.stat.name }}: {{ s.base_stat }}</li>
+          <li *ngFor="let s of p.stats">{{ translateStat(s.stat.name) }}: {{ s.base_stat }}</li>
         </ul>
 
         <h4>Habilidades</h4>
@@ -62,7 +75,7 @@ import { Pokemon } from '../../core/models/pokemon.model';
         <p *ngIf="compareError()" class="error">{{ compareError() }}</p>
         <div *ngIf="comparePokemon() as cp" class="mini-card">
           <p><strong>{{ pokemon()?.name }}</strong> vs <strong>{{ cp.name }}</strong></p>
-          <p>Base stat total: {{ baseTotal(pokemon()!) }} vs {{ baseTotal(cp) }}</p>
+          <p>Total base: {{ baseTotal(pokemon()!) }} vs {{ baseTotal(cp) }}</p>
           <p><strong>Ventaja sugerida:</strong> {{ winnerText() }}</p>
         </div>
       </section>
@@ -76,22 +89,30 @@ import { Pokemon } from '../../core/models/pokemon.model';
     </section>
   `,
   styles: [`
-    .search { padding: 1rem; border: 1px solid #ddd; border-radius: 12px; }
+    .panel { padding: 1rem; border: 1px solid #e2e8f0; border-radius: 14px; background: #fff; }
+    .hero { margin-bottom: .75rem; }
+    .hero h2 { margin: 0 0 .25rem; }
+    .hero p { margin: 0; color: #475569; }
     .row { display: flex; gap: .5rem; margin-bottom: .75rem; }
-    input { flex: 1; padding: .5rem; }
-    button { padding: .5rem .75rem; }
+    input { flex: 1; padding: .65rem; border: 1px solid #cbd5e1; border-radius: 10px; }
+    button { padding: .6rem .85rem; border: 0; border-radius: 10px; background: #1d4ed8; color: #fff; }
+    .estado { color: #334155; }
     .error { color: #b00020; }
-    .card, .mini-card { padding: .75rem; background: #f8f9fb; border-radius: 10px; margin-top: .5rem; }
-    img { width: 96px; height: 96px; image-rendering: pixelated; }
+    .inicial h3 { margin: .5rem 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(120px,1fr)); gap: .5rem; }
+    .poke-chip { background: #f1f5f9; color: #0f172a; border: 1px solid #e2e8f0; }
+    .card, .mini-card { padding: .85rem; background: #f8fafc; border-radius: 12px; margin-top: .75rem; border: 2px solid #cbd5e1; }
+    img { width: 110px; height: 110px; image-rendering: pixelated; background: #fff; border-radius: 10px; }
     ul { margin: .25rem 0 .75rem; }
     .head { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
-    .fav { white-space: nowrap; }
+    .fav { white-space: nowrap; background: #0f766e; }
     .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .chips button { background: #f59e0b; color: #111827; }
     .compare, .favorites { margin-top: 1rem; }
     @media (max-width: 600px) { .row { flex-direction: column; } }
   `]
 })
-export class PokemonSearchComponent {
+export class PokemonSearchComponent implements OnInit {
   private readonly api = inject(PokeApiService);
   private readonly http = inject(HttpClient);
 
@@ -101,6 +122,7 @@ export class PokemonSearchComponent {
   loading = signal(false);
   error = signal<string | null>(null);
   pokemon = signal<Pokemon | null>(null);
+  initialList = signal<string[]>([]);
 
   comparePokemon = signal<Pokemon | null>(null);
   compareError = signal<string | null>(null);
@@ -114,6 +136,19 @@ export class PokemonSearchComponent {
   weaknesses = computed(() => this.calcDamage().weak);
   resistances = computed(() => this.calcDamage().resist);
   immunities = computed(() => this.calcDamage().immune);
+
+  ngOnInit(): void {
+    this.loadInitial();
+    this.query = 'pikachu';
+    this.search();
+  }
+
+  private loadInitial(): void {
+    this.api.getPokemonList(12, 0).subscribe({
+      next: (res) => this.initialList.set(res.results.map(x => x.name)),
+      error: () => this.initialList.set([])
+    });
+  }
 
   search(): void {
     const value = this.query.trim().toLowerCase();
@@ -198,6 +233,29 @@ export class PokemonSearchComponent {
 
   typeNames(p: Pokemon): string {
     return p.types.map(t => t.type.name).join(', ');
+  }
+
+  primaryType(p: Pokemon): string {
+    return p.types[0]?.type?.name ?? 'normal';
+  }
+
+  typeColor(type: string): string {
+    const map: Record<string, string> = {
+      fire: '#ef4444', water: '#3b82f6', grass: '#22c55e', electric: '#facc15',
+      psychic: '#ec4899', ice: '#67e8f9', dragon: '#7c3aed', dark: '#374151',
+      fairy: '#f9a8d4', normal: '#94a3b8', fighting: '#b45309', flying: '#60a5fa',
+      poison: '#a855f7', ground: '#a16207', rock: '#78716c', bug: '#65a30d',
+      ghost: '#6366f1', steel: '#64748b'
+    };
+    return map[type] ?? '#94a3b8';
+  }
+
+  translateStat(stat: string): string {
+    const map: Record<string, string> = {
+      hp: 'PS', attack: 'Ataque', defense: 'Defensa',
+      'special-attack': 'At. Especial', 'special-defense': 'Def. Especial', speed: 'Velocidad'
+    };
+    return map[stat] ?? stat;
   }
 
   private loadTypeDamage(p: Pokemon): void {
